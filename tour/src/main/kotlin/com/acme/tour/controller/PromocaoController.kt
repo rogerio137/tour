@@ -23,4 +23,9 @@ class PromocaoController{
     fun create(@RequestBody promocao: Promocao){
         promocoes[promocao.id] = promocao
     }
+
+    @RequestMapping(value = ["/promocoes/{id}"], method = arrayOf(RequestMethod.DELETE))
+    fun delete(@PathVariable id: Long){
+        promocoes.remove(id)
+    }
 }
